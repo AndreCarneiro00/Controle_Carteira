@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% set active_page = 'cadastro' %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cadastro.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="op_cad">
+    <h1>Cadastro Renda Variável</h1><br><br>
+    <form action="#" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <div class="form-check">
+                    <input type="radio" name="categoria_ativo" id="acoes" value="ACOES" required>
+                    <label for="acoes">
+                        Ações
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <div class="form-check">
+                    <input type="radio" name="categoria_ativo" id="fiis" value="FIIS" required>
+                    <label for="fiis">
+                        Fundos Imobiliários
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <div class="form-check">
+                    <input type="radio" name="categoria_ativo" id="stocks" value="STOCKS" required>
+                    <label for="stocks">
+                        Stocks
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <div class="form-check">
+                    <input type="radio" name="categoria_ativo" id="reits" value="REITS" required>
+                    <label for="reits">
+                        REITs
+                    </label>
+                </div>
+            </div>
+        </div><br>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="ticker">Ticker</label>
+                <input type="text" class="form-control" id="ticker" name="ticker" placeholder="Ticker" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="data">Data</label>
+                <input type="date" class="form-control" id="data" name="data" placeholder="Data" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="preco">Preço</label>
+                <input type="number" step="0.00001" class="form-control" id="preco" name="preco" placeholder="Preço" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="emolumento">Taxa Emolumento</label>
+                <input type="number" step="0.00001" class="form-control" id="emolumento" name="emolumento" placeholder="Taxa Emolumento" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="corretagem">Taxa Corretagem</label>
+                <input type="number" step="0.00001" class="form-control" id="corretagem" name="corretagem"
+                       placeholder="Taxa Corretagem">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="corretora">Corretora</label>
+                <input type="text" class="form-control" id="corretora" name="corretora" placeholder="Corretora">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="modalidade">Modalidade</label>
+                <select id="modalidade" name="modalidade" class="form-control" required>
+                    <option selected>C</option>
+                    <option>V</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="setor">Corretora</label>
+                <input type="text" class="form-control" id="setor" name="setor" placeholder="Setor">
+            </div>
+        </div><br>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>
+{% endblock %}
